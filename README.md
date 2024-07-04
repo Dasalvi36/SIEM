@@ -1,23 +1,23 @@
 ## SIEM System using Splunk
   
-Step 1: If you didn't choose to start Splunk during the installation, start it manually by navigating to ‘C:\Program Files\Splunk\bin’ and running ‘splunk.exe start’.
+**Step 1: If you didn't choose to start Splunk during the installation, start it manually by navigating to ‘C:\Program Files\Splunk\bin’ and running ‘splunk.exe start’.**
  
 ![Screenshot1](/images/S1.JPG)
 
-Step 2: Open Splunk Web:
-Open a web browser and go to ‘http://localhost:8000’.
-Log in with the username and password you created during installation.
+**Step 2: Open Splunk Web:**
+- Open a web browser and go to ‘http://localhost:8000’.
+- Log in with the username and password you created during installation.
  
 ![Screenshot2](/images/S2.JPG)
 
-Step 3: Configure Splunk:
-Follow the initial setup prompts to configure basic settings like time zone and email settings.
+**Step 3: Configure Splunk:**
+- Follow the initial setup prompts to configure basic settings like time zone and email settings.
 
 ![Screenshot3](/images/S3.JPG)
 
-Step 4:	Install Necessary Splunk Apps for SIEM
-In Splunk Web, go to ‘Apps > Manage Apps’.
-Click ‘Install app from file’ and upload the downloaded ‘.spl’ files.
+**Step 4:	Install Necessary Splunk Apps for SIEM**
+- In Splunk Web, go to ‘Apps > Manage Apps’.
+- Click ‘Install app from file’ and upload the downloaded ‘.spl’ files.
  
 ![Screenshot4](/images/S4.JPG)
 
@@ -27,79 +27,80 @@ Click ‘Install app from file’ and upload the downloaded ‘.spl’ files.
 
 ![Screenshot7](/images/S7.JPG)
 
-Step 5:	After installing the apps, restart Splunk to apply the changes. Go to ‘Settings > Server controls > Restart Splunk’.
+**Step 5:	After installing the apps, restart Splunk to apply the changes. Go to ‘Settings > Server controls > Restart Splunk’.**
  
  ![Screenshot8](/images/S8.JPG)
 
  ![Screenshot9](/images/S9.JPG)
 
-Step 6:	Configure Windows Event Logs:
-In Splunk Web, go to ‘Settings > Data Inputs > Local Event Log Collection’.
-Add the event logs you want to monitor (e.g., Application, System, Security).
+**Step 6:	Configure Windows Event Logs:**
+- In Splunk Web, go to ‘Settings > Data Inputs > Local Event Log Collection’.
+- Add the event logs you want to monitor (e.g., Application, System, Security).
  
  ![Screenshot10](/images/S10.JPG)
 
  ![Screenshot11](/images/S11.JPG)
 
-Step 7:	Configure Windows Performance Monitoring:
-Go to ‘Settings > Data Inputs> Local Performance Monitoring’.
-Add the performance counters you want to monitor (e.g., Processor, Memory, Network).
-Processor
+**Step 7:	Configure Windows Performance Monitoring:**
+- Go to ‘Settings > Data Inputs> Local Performance Monitoring’.
+- Add the performance counters you want to monitor (e.g., Processor, Memory, Network).
+
+**Processor**
 
 ![Screenshot12](/images/S12.JPG)
 
 ![Screenshot13](/images/S13.JPG)
 
-Memory
+**Memory**
 
 ![Screenshot14](/images/S14.JPG)
 
-Network
+**Network**
 
 ![Screenshot15](/images/S15.JPG)
 
-Step 8:	Verify Data Ingestion
-Search for Data:
-In Splunk Web, go to ‘Search & Reporting’.
-Use the search bar to verify data is being indexed: index=main sourcetype=WinEventLog
+**Step 8:	Verify Data Ingestion**
+**Search for Data:**
+- In Splunk Web, go to ‘Search & Reporting’.
+- Use the search bar to verify data is being indexed: index=main sourcetype=WinEventLog
 
 ![Screenshot16](/images/S16.JPG)
 
-Step 9:	Check for Errors:
-Ensure there are no errors in data collection by checking ‘Settings > Monitoring Console >Indexing > Indexing Performance’.
+**Step 9:	Check for Errors:**
+- Ensure there are no errors in data collection by checking ‘Settings > Monitoring Console >Indexing > Indexing Performance’.
 
 ![Screenshot17](/images/S17.JPG)
 
 ![Screenshot18](/images/S18.JPG)
  
-Step 10:	Create Alerts & Generate Report:
-•	Go to Settings > Searches, Reports, and Alerts.
-•	Create new alerts based on the security events you want to monitor (e.g., failed logins).
-•	Go to Apps > Search & Reporting > Run the below Query > Click on ‘Save As’ > Report.
-Query: index="main" sourcetype=XmlWinEventLog source="XmlWinEventLog:Security" EventID=4625
+**Step 10:	Create Alerts & Generate Report:**
+- Go to Settings > Searches, Reports, and Alerts.
+- Create new alerts based on the security events you want to monitor (e.g., failed logins).
+- Go to Apps > Search & Reporting > Run the below Query > Click on ‘Save As’ > Report.
+**Query: index="main" sourcetype=XmlWinEventLog source="XmlWinEventLog:Security" EventID=4625**
 
 ![Screenshot19](/images/S19.JPG)
  
-Go to Activity > Triggered Alerts
+**Go to Activity > Triggered Alerts**
 
 ![Screenshot20](/images/S20.JPG)
  
-Generated Report for Event ID 4625
+**Generated Report for Event ID 4625**
 
 ![Screenshot21](/images/S21.JPG)
  
-Exported Report as PDF
+**Exported Report as PDF**
 
 ![Screenshot22](/images/S22.JPG)
 
-Step 11:	Create Dashboards:
-•	Use the ‘Dashboard’ feature to create visual representations of your data.
-•	Add panels to display metrics such as login attempts, suspicious activities, system performance, etc.
-String:index="main" sourcetype=XmlWinEventLog source="XmlWinEventLog:Security" EventID=4625
+**Step 11:	Create Dashboards:**
+- Use the ‘Dashboard’ feature to create visual representations of your data.
+- Add panels to display metrics such as login attempts, suspicious activities, system performance, etc.
+**String: index="main" sourcetype=XmlWinEventLog source="XmlWinEventLog:Security" EventID=4625**
 
 ![Screenshot23](/images/S23.JPG)
 
-Query: index="main"
+**Query: index="main"**
  
 ![Screenshot24](/images/S24.JPG)
 
