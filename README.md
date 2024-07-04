@@ -1,16 +1,16 @@
 ## SIEM System using Splunk
   
-1.	If you didn't choose to start Splunk during the installation, start it manually by navigating to ‘C:\Program Files\Splunk\bin’ and running ‘splunk.exe start’.
+1. If you didn't choose to start Splunk during the installation, start it manually by navigating to ‘C:\Program Files\Splunk\bin’ and running ‘splunk.exe start’.
  
 ![Screenshot1](/images/S1.JPG)
 
-2.	Open Splunk Web:
+2. Open Splunk Web:
 Open a web browser and go to ‘http://localhost:8000’.
 Log in with the username and password you created during installation.
  
 ![Screenshot2](/images/S2.JPG)
 
-3.	Configure Splunk:
+3. Configure Splunk:
 Follow the initial setup prompts to configure basic settings like time zone and email settings.
 
 ![Screenshot3](/images/S3.JPG)
