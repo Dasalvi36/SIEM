@@ -1,4 +1,4 @@
-## SIEM System using Splunk
+## Security Monitoring and Logging using SIEM
   
 **Step 1: If you didn't choose to start Splunk during the installation, start it manually by navigating to ‘C:\Program Files\Splunk\bin’ and running ‘splunk.exe start’.**
  
